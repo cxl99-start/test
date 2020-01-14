@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试</title>
+    <base target="_blank"/>
+</head>
+<style type="text/css">
+    div a {
+        color: black;
+        text-align: center;
+    }
+
+</style>
+<body>
+<form action="" method="get">
+    第一个数：<input type="text" id="one" name="one" required>
+    <br>
+    第二个数：<input type="text" id="two" name="two">
+    <br>
+    运算方法：
+    <select style="">
+        <option value="add">加法运算</option>
+        <option value="jian">减法运算</option>
+        <option value="cheng">乘法运算</option>
+        <option value="chu">除法运算</option>
+    </select>
+    <!--&lt;!&ndash;<input list="brows">&ndash;&gt;   html新增标签，用户在input中输入内容是，可以预览预定义内容-->
+    <!--<datalist id="brows">-->
+    <!--<option value="add">加法运算</option>-->
+    <!--<option value="jian">减法运算</option>-->
+    <!--<option value="cheng">乘法运算</option>-->
+    <!--<option value="chu">除法运算</option>-->
+    <!--</datalist>-->
+    <br>
+    运算结果：<input type="text" id="sum">
+    <br>
+    <button type="submit" onclick="f()">确定</button>
+    <br>
+    <canvas id="myCanvas" width="200" height="100"></canvas>
+    <!--<input type="color" id="yanse" onchange="colors()">-->
+    <!--<div id="dd" style="height:100px;width: 100px" >背景颜色</div>-->
+
+</form>
+</body>
+<script type="text/javascript">
+    var c = document.getElementById("myCanvas");
+    var cxt = c.getContext("2d");
+    cxt.fillStyle = "#FF0000";
+    cxt.fillRect(0, 0, 150, 75);
+
+    function f() {
+        var a = parseInt(document.getElementById("one").value);
+        var b = parseInt(document.getElementById("two").value);
+        if (!isNaN(a) && !isNaN(b))
+            document.getElementById("sum").value = a + b;
+        sessionStorage.setItem('a', a, "b", b)
+    }
+
+    function colors() {
+        var yanse = document.getElementById("yanse").value;
+        dd.style.backgroundColor = yanse;
+    }
+</script>
+</html>
